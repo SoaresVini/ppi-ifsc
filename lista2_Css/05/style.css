@@ -1,0 +1,19 @@
+
+h1{
+    text-align: center;
+    text-shadow: 0.1em 0.1em 0.05em #c01515;   
+    font-family: 'Times New Roman', Times, serif;
+}
+
+ol,li{
+    list-style-type: none;  
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    display: inline-block;
+}
+
+
+

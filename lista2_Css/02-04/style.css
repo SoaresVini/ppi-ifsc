@@ -1,0 +1,52 @@
+span{
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid black;
+    margin: 3px;
+    line-height: 50px;
+}
+
+#id1 span:first-child:hover {
+    background-color: red;
+}
+
+#id2 span:last-child:hover {
+    background-color: green;
+}
+
+#id3 span:nth-child(2):hover {
+    background-color: blue;
+}
+
+#id4 span:nth-child(5):hover {
+    background-color: palevioletred;
+}
+
+#id5 span:nth-child(odd):hover {
+    background-color: yellow;
+}
+
+#id6 span:nth-child(even):hover {
+    background-color: orange;
+}
+
+#id7 span:nth-child(4):hover {
+    background-color: pink;
+}
+
+#id8 span:nth-child(2):hover , #id8 span:nth-child(4):hover   {
+    background-color: brown;
+}
+
+#id9 span:first-child:hover , #id9 span:nth-child(4):hover  {
+    background-color: gray;
+}
+
+#id10 span:nth-last-child(-n+3):hover  {
+    background-color: purple;
+}

@@ -1,0 +1,28 @@
+.square{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    margin-right: 50px;
+    background-color: black;
+   
+}
+.square:hover{
+  animation-name: roda;
+  animation-duration: 2s;
+}
+
+@keyframes roda {
+  0% {
+    transform: rotate(0deg);
+    background-color: blue;
+  }
+  50% {
+    transform: rotate(180deg);
+    background-color: yellow;
+  }
+  100% {
+   transform: rotate(360deg);
+    background-color: red;
+  }
+}

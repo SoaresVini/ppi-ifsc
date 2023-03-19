@@ -1,0 +1,37 @@
+
+span{
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    margin: 15px;
+    line-height: 100px;
+    background-color: blue;
+}
+
+/*Questão 6*/
+#id1 span{
+    transform: rotate(45deg);
+}
+
+/*Questão 7*/
+#id2 span{
+    transition: all 0.5s ease-in-out;
+}
+
+/*Questão 8*/
+#id3 span{
+    text-shadow: 3px 2px 2px rgb(5, 5, 5); 
+}
+
+/*Questão 9*/
+#id4 span{
+    box-shadow: 5px 5px 5px rgb(5, 5, 5); 
+}
+
+/*Questão 10*/
+#id5 span{
+    cursor: pointer;
+}
+

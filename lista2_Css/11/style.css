@@ -1,0 +1,37 @@
+span{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    position: relative;
+}
+    
+
+#id1{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: aqua;
+}
+
+#id2{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: black;
+    color: white;
+ }
+
+ #id3{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: blueviolet;
+ }
+
+ #id4{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-color: red;
+ }
