@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.caixa{
+    margin: 5px;
+    border: 1px solid black;
+    background-color: aquamarine;
+    width: 100px;
+    height: 100px;
+}
+
+a{
+    width: 100px;
+    height: 100px;
+}

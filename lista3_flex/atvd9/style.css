@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    text-align: center;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    background-color: red;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+    background-color: blueviolet;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    background-color: green;
+}
+
+.bottom-rigth{
+    bottom: 0;
+    right: 0;
+    background-color: yellow;
+}
+
+
+.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gray;
+}

@@ -1,0 +1,10 @@
+div,span{
+    width: 1000px;
+    height: 100vh;
+    border: 2px solid black;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}

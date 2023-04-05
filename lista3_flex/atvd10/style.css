@@ -1,0 +1,44 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: aliceblue;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap; /* adicionado para quebrar em nova linha quando não houver mais espaço */
+    background-color: rgb(38, 101, 184);
+}
+
+div{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid white;
+}
+
+.Header{
+    flex-grow: 1;
+    height: 200px;
+
+}
+
+.Menu{
+    width: 300px;
+    height: 600px;
+}
+
+.Content{
+    flex-grow: 1;
+    height: 600px;
+}
+    
+
+.Footer{
+    flex-grow: 1;
+    height: 200px;
+}
+
+

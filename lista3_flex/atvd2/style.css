@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+div{
+    border: solid 2px black;
+    background-color: blueviolet;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.div1{
+    width: 300px;
+    
+}
+.div2{
+    flex-grow: 1;
+
+}
