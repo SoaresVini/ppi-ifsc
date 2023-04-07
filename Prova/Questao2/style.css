@@ -1,0 +1,78 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
+  color: aliceblue;
+  background-image: url(/img/leao.jpg) ;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div{
+ border-radius: 50px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin: 5px;
+
+}
+
+.Header{
+  background-color: aqua;
+  flex-grow: 1;
+  height: 200px;
+}
+
+.Menu{
+  background-color: aqua;
+  flex-grow: 0;
+  height: 600px;
+  width: 300px;
+
+}
+
+.Content{
+  background-color: aqua;
+  flex-grow: 1;
+  height: 600px;
+}
+ 
+
+.Footer{
+  background-color: aqua;
+  flex-grow: 1;
+  height: 200px;
+}
+
+.Area{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.botao {
+  height: 50px;
+  width: 100px;
+  background-color: gray;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.botao:hover {
+  background-color: #0056b3;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}

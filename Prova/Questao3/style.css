@@ -1,0 +1,61 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 500px;
+  border: 1px solid black;
+  flex-direction: column;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+label {
+  margin: 15px;
+}
+
+input {
+  margin: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+
+
+}.botao {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 60px;
+  background-color: gray;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.botao:hover {
+  background-color: #0056b3;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.title{
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  margin: 10px;
+
+}
