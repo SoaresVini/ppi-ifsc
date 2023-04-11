@@ -1,0 +1,141 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    margin: 10px;
+    grid-gap: 4px;
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 100px auto 100px;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-areas: 
+    "header header"
+    "menu   area"
+    "footer footer"
+    ;
+    background-image: url(/img/capibara.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    
+}
+
+.box{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: black;
+    font-size: 15pt;
+    border-radius: 20px ;
+    border: 2px solid black;
+    background-color: yellow;
+}
+
+.header{
+    grid-area: header;
+}
+
+.menu{
+    align-items: flex-start;
+    grid-area: menu; 
+}
+.area{
+    padding: 5px;
+    border-radius: 20px ;
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: 100px auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "bar"
+    "center"
+    ;
+
+    background-color: gray;
+    grid-area: area;  
+}
+.footer{
+    grid-area: footer; 
+}
+.center{
+    justify-content: center;
+    margin: 5px;
+    grid-area: center;
+    background-color: aquamarine;
+}
+
+.barButton{
+    margin: 5px;
+    grid-area: bar;
+}
+.barButton ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.barButton li{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 10px;
+    width: 50px;;
+    margin: 10px;
+    border-radius: 5px;
+    border: 3px solid black;
+    background-color: blue;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    
+}
+
+.barButton li:hover{
+    height: 13px;
+    width: 53px;
+    color: black;
+    border: 3px solid black;
+    background-color: aqua;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.Area{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  .botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 10px;
+    width: 50px;;
+    margin: 10px;
+    border-radius: 5px;
+    border: 3px solid black;
+    background-color: blue;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .botao:hover {
+    height: 12px;
+    width: 53px;
+    color: black;
+    border: 3px solid black;
+    background-color: aqua;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  }
