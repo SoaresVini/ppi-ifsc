@@ -15,10 +15,10 @@
     "menu   area"
     "footer footer"
     ;
-    background-image: url(/img/capibara.jpg);
+    
     background-position: center center;
     background-attachment: fixed;
-    
+    background-image: url(capibara.jpg);
 }
 
 .box{
@@ -54,6 +54,7 @@
 
     background-color: gray;
     grid-area: area;  
+    
 }
 .footer{
     grid-area: footer; 
