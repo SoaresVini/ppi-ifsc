@@ -33,6 +33,3 @@ let x = prompt("Alerta")
 for (let i = 0; i <= x; i++) {
     console.log(i)
 }
-
-
-08 - 11
