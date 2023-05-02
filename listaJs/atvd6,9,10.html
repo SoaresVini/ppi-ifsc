@@ -11,6 +11,7 @@
             justify-content: center;
             align-items: flex-start;
             flex-direction: column;
+            flex-wrap: wrap;
         }
         #cima{
             display: flex;
@@ -22,6 +23,8 @@
 			padding: 10px;
 			font-size: 15px;
             margin: 5px;
+            border-radius: 20px;
+            border: 2px solid black;
 		}
 		button {
 			padding: 5px;
@@ -31,7 +34,7 @@
 			border: none;
 			cursor: pointer;
             border: 2px solid black;
-
+            border-radius: 20px;
 		}
 		ul {
 			margin-top: 20px;
@@ -46,14 +49,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: aqua;
 		}
+        .btn2{
+            opacity: 0;
+            left: 120px;
+            position: absolute;
+        }
+        .btn2:hover{
+            opacity: 1;
+        }
+       
 	</style>
 </head>
 <body class="container">
 
     <div id="cima">
         <input type="text" id="item" placeholder="Digite um item...">
-        <button onclick="addItem()" >Confirmar</button>
+        <button class="btn1"  onclick="addItem()" >Confirmar</button>
     </div>
     
 
@@ -62,16 +75,24 @@
 </body>
     <script>
         function addItem() {
-            var item = document.getElementById("item").value
-            
-            var lista = document.getElementById("lista");
-            var elemento = document.createElement("li");
-            var texto = document.createTextNode(item);
-
-            elemento.appendChild(texto);
-            lista.appendChild(elemento);
-            document.getElementById("item").value = "";
-        }
+        var item = document.getElementById("item").value
         
+        var lista = document.getElementById("lista");
+        var elemento = document.createElement("li");
+        var texto = document.createTextNode(item);
+
+        var botao = document.createElement("button");
+        botao.classList.add("btn2");
+        botao.innerHTML = "Remover";
+        botao.onclick = function() {
+            lista.removeChild(botao.parentNode);
+        }
+
+        elemento.appendChild(texto);
+        elemento.appendChild(botao);
+        lista.appendChild(elemento);
+        document.getElementById("item").value = "";
+ 
+    }
     </script>
 </html>

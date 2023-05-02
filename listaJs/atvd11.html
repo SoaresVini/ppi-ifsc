@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+            .calculadora {
+                margin: 0 auto;
+                margin-top: 100px;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                width: 300px;
+            }
+
+            .tela {
+                background-color: #FFF;
+                border: 1px solid black;
+                border-radius: 5px;
+                font-size: 20px;
+                height: 50px;
+                width: 350px;
+                margin-bottom: 10px;
+                padding: 10px;
+                text-align: right;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .teclas {
+                display: flex;
+                flex-direction: column;
+                background-color: #EEE;
+                border-radius: 5px;
+                padding: 10px;
+                border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 450px;
+                width: 350px;
+            }
+
+            .linha {
+                display: flex;
+            }
+
+            .tecla {
+                background-color: #FFF;
+                border: 1px solid #CCC;
+                border-radius: 5px;
+                color: #333;
+                cursor: pointer;
+                font-size: 24px;
+                height: 80px;
+                width: 80px;
+                margin: 5px;
+                padding: 20px;
+                margin: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .tecla:hover{
+                background-color: aquamarine;
+            }
+
+    </style>
+</head>
+<body class="container">
+
+    
+   <div class="calculadora">
+        <div class="tela">Calcule...</div>
+
+        <div class="teclas">
+            <div class="linha">
+                
+                <button class="tecla">1</button>
+                <button class="tecla">2</button>
+                <button class="tecla">3</button>
+                <button class="tecla">+</button>
+                
+            </div>
+            <div class="linha">
+                
+                <button class="tecla">4</button>
+                <button class="tecla">5</button>
+                <button class="tecla">6</button>
+                <button class="tecla">-</button>
+            </div>
+            <div class="linha">
+                <button class="tecla">7</button>
+                <button class="tecla">8</button>
+                <button class="tecla">9</button>
+                <button class="tecla">*</button>
+            </div>
+            <div class="linha">
+                
+                <button class="tecla">0</button>
+                <button class="tecla">=</button>
+                <button class="tecla">C</button>
+                <button class="tecla">/</button>
+            </div>
+        </div>
+           
+   </div> 
+</body>
+    <script>
+
+var tela;
+var num1 = 0;
+var num2 = 0;
+var resultado = 0;
+var operacao = "";
+
+function soma() {
+  resultado = num1 + num2;
+}
+
+function subtracao() {
+  resultado = num1 - num2;
+}
+
+function multiplicacao() {
+  resultado = num1 * num2;
+}
+
+function divide() {
+  resultado = num1 / num2;
+}
+
+function limpar() {
+  num1 = 0;
+  num2 = 0;
+  resultado = 0;
+  operacao = "";
+  tela = "";
+  updateDisplay(resultado);
+}
+
+function updateDisplay(value) {
+  document.querySelector(".tela").innerHTML = value;
+}
+
+function handleClick(event) {
+  var btnValue = event.target.innerHTML;
+
+  if (btnValue >= "0" && btnValue <= "9") {
+    if (operacao === "") {
+      num1 = num1 * 10 + parseInt(btnValue);
+      tela = num1;
+      updateDisplay(tela);
+    } else {
+      num2 = num2 * 10 + parseInt(btnValue);
+      tela = tela + " " + operacao + " " + num2;
+      updateDisplay(tela);
+    }
+  } else if (btnValue === "+") {
+    operacao = "+";
+  } else if (btnValue === "-") {
+    operacao = "-";
+  } else if (btnValue === "*") {
+    operacao = "*";
+  } else if (btnValue === "/") {
+    operacao = "/";
+  } else if (btnValue === "=") {
+    if (operacao === "+") {
+      soma();
+    } else if (operacao === "-") {
+      subtracao();
+    } else if (operacao === "*") {
+      multiplicacao();
+    } else if (operacao === "/") {
+      divide();
+    }
+
+    tela = tela + " = " + resultado;
+    updateDisplay(tela);
+
+    num1 = resultado;
+    num2 = 0;
+    operacao = "";
+    tela = "";
+  } else if (btnValue === "C") {
+    limpar();
+  }
+}
+
+var teclas = document.querySelectorAll(".tecla");
+for (var i = 0; i < teclas.length; i++) {
+  teclas[i].addEventListener("click", handleClick);
+}
+
+    </script>
+</html>
