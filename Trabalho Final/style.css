@@ -30,6 +30,9 @@ body {
     margin-bottom: 20px;
     margin-top: 5px;
     border-radius: 5px;
+}
+
+.text {
     background: transparent;
 }
 
@@ -40,14 +43,14 @@ a{
 
 .btn{
     background-color: #C115E6;
-    color: black;
+    color: white;
     font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .btn:hover{
-    background-color: #9510B3;
+    background-color: #661279;
     color: white;
 }
 
