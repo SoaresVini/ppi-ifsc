@@ -11,14 +11,8 @@ if (conectaBD()) {
 
   echo insert($nome, $login, $senha);
 
-  header('Location: login.html')
-
-  //echo "<BR><PRE>";
- // var_dump(recuperaAll());
-
-
-  //echo "</PRE>";
-
+  header('Location: login.html');
+  
 } else {
   echo "Erro ao conectar";
 }

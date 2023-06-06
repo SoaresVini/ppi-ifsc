@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(208, 15, 208);
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+}
+
+header{
+    background-image: linear-gradient(to bottom,rgb(208, 15, 208) ,rgb(136, 9, 136));
+    padding: 10px;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.205);
+    color: white;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(136, 9, 136);
+  padding: 10px;
+}
+
+div{
+  display: flex;
+  align-items: center;
+  height: 25px;
+}
+
+div > a{
+  flex-direction: row;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 10px;
+  padding: 5px;
+  height: 30px;
+  color: black;
+}
+
+div > a:hover{
+    background-color: rgb(208, 15, 208);
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.205);
+    border-radius: 5px;
+}

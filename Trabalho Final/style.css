@@ -12,9 +12,10 @@ body {
     justify-content: center;
     height: 100vh;
     background-image: linear-gradient(to right, #C115E6,#9510B3, #5B2866);
+
 }
 
-.formLogin {
+.formCad{
     display: flex;
     flex-direction: column;
     background-color: #fff;
@@ -23,7 +24,7 @@ body {
     box-shadow: 10px 10px 50px rgba(156, 30, 185, 0.553)
 }
 
-.formLogin input {
+.formCad  input {
     padding: 15px;
     font-size: 14px;
     border: 1px solid #ccc;
@@ -32,17 +33,16 @@ body {
     border-radius: 5px;
 }
 
-.formCad {
+.formLogin{
     display: flex;
     flex-direction: column;
     background-color: #fff;
     border-radius: 10px;
     padding: 40px;
-    box-shadow: 10px 10px 50px rgba(156, 30, 185, 0.553);
-    width: 300px;
+    box-shadow: 10px 10px 50px rgba(156, 30, 185, 0.553)
 }
 
-.formCad input {
+.formLogin  input {
     padding: 15px;
     font-size: 14px;
     border: 1px solid #ccc;
@@ -55,24 +55,9 @@ body {
     background: transparent;
 }
 
-.cad{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 a{
     font-size: 14px;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    margin-bottom: 20px;
-    cursor: pointer;
-}
-
-a:hover{
-    color: rgb(0, 179, 255);
-    text-decoration: underline;
+    color: black;
 }
 
 .btn{
@@ -85,6 +70,13 @@ a:hover{
 
 .btn:hover{
     background-color: #661279;
+    color: white;
+}
+
+a{
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
     color: white;
 }
 
