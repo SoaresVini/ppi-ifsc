@@ -12,7 +12,8 @@ if (isset($_GET['id'])) {
 
         // Redireciona o usuário de volta para a página de detalhes do usuário
 
-        header("Location: user.php");
+        header("Location: index.html");
+
  
     } else {
         echo "<p>Preencha todos os campos do formulário.</p>";

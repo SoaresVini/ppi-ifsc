@@ -23,6 +23,7 @@
    <div>
      <a href="user.php">Users</a>
      <a href="sobre.php">Sobre</a>
+     <a href="cadastro.html">Cadastrar Usuario</a>
      <a href="Logout.php">Logout</a>
    </div>
 

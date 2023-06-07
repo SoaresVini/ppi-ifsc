@@ -45,62 +45,14 @@
     $senha = $_POST['password'];
 
     if (verificaLoginSenha($login, $senha)){
-
-      echo '
-        <div id="barra">
-          <div id="progresso"></div>
-        </div>
-        <p>0%</p>
-        ';
-
       session_start();
       $_SESSION['login'] = $login;
-
-      echo 
-      
-      '
-      <script>
-        setTimeout(function() {
-        const progresso = document.getElementById("progresso")
-    
-        var text = document.querySelector("p");
-    
-        for (let i = 3; i <= 10; i++) {
-          setTimeout(function() {
-            progresso.style.width = `${i * 10}%`;
-            text.innerHTML = `${i * 10}%`;
-    
-            if (i == 10) {
-              
-              setTimeout(function() {
-                window.location.href="home.php"
-                alert("Login efetuado com sucesso!")
-              }, 600);
-            }
-          }, i * 600);
-        }
-        
-        }, 600)
-    
-      </script>
-
-      ';
-
-      } else {
-
-        echo 
-        '
-        <script>
-          alert("login ou senha inválidos")
-          window.location.href="login.html"
-        </script>
-        '     ;
+      header('Location: home.php'); 
+    }else {
+      header('Location: login.html');
     }
-
     ?>
 
-    
-    
 </body>
 </html>
 

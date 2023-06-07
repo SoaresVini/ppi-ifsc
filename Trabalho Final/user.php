@@ -10,15 +10,18 @@
 
     <style>
         button {
+            margin-left: 40px;
             padding: 5px;
             font-size: 14px;
-            background-color: red;
-            color: white;
-            border: none;
             cursor: pointer;
-            border: 2px solid black;
-            border-radius: 20px;
+            border: 1px solid black;
+            border-radius: 10px;
         }
+
+        button:hover{
+            background-color: rgb(165, 31, 165);
+        }
+
         ul {
             display : flex;
             align-items: center;
@@ -28,23 +31,19 @@
             list-style-type: none;
         }
         li {
+            background-color: rgb(223, 204, 36);
             margin-bottom: 10px;
             border: 2px solid black;
+            border-radius: 10px;
             height: 60px;
             width: 350px;
             display: flex;
             flex-direction: row;
             align-items: center;
-            background-image: linear-gradient(to bottom,rgb(208, 15, 208) ,rgb(136, 9, 136));
             padding: 10px;
         }
-        button {
-            margin-left: 10px;
-            opacity: 0;
-        }
-        button:hover {
-            opacity: 1;
-        }
+
+
     </style>
 </head>
 <body>
@@ -96,6 +95,7 @@
 
 <script>
     function deleteUser(id) {
+        alert('Ao deletar você ira ser desconectado do sistema')
         window.location.href = 'delete.php?id=' + id;
     }
 

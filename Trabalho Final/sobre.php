@@ -26,7 +26,7 @@
    
    <div>
      <a href="home.php">Home</a>
-     <a href="">Sobre</a>
+     <a href="cadastro.html">Cadastrar Usuario</a>
      <a href="Logout.php">Logout</a>
    </div>
 

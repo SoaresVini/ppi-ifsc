@@ -1,7 +1,7 @@
 body{
-    background-color: rgb(208, 15, 208);
     margin: 0;
     padding: 0;
+    background-color: rgba(160, 28, 160, 0.6);
     font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
 }
 
@@ -17,6 +17,7 @@ nav{
   align-items: center;
   justify-content: space-between;
   background-color: rgb(136, 9, 136);
+  
   padding: 10px;
 }
 

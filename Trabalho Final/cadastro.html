@@ -10,7 +10,11 @@
 
     <body>
 
+      
+
         <div class="page">
+          <button>Voltar</button>
+          
           <form action="CadDB.php" class="formCad" method="post">
             <h1>Cadastro</h1>
             <p>Digite os seus dados para se CADASTRAR.</p>
@@ -20,9 +24,30 @@
             <input type="email" placeholder="Digite seu e-mail" autofocus="true" name="email" class="text" />
             <label for="password">Senha</label>
             <input type="password" placeholder="Digite sua senha" name="password" class="text" />
+            
+            <input type="hidden" name="isBoolean" value="1">
+
             <input type="submit" value="Acessar" class="btn" />
           </form>
         </div>
     
+        <script>
+
+            function limpaDados(){
+
+              let nome = querySelector('#nome')
+              let gmail = querySelector('#gmail')
+              let senha = querySelector('#senha')
+
+
+              nome.innerHTML = ''
+              gmail.innerHTML = ''
+              senha.innerHTML = ''
+
+            }
+
+
+        </script>
+
 </body>
 </html>
