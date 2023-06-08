@@ -1,3 +1,31 @@
+<?php
+include_once "db.php";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Verifica se os campos do formulário foram preenchidos
+    if (!empty($_POST['nome']) && !empty($_POST['email']) && !empty($_POST['password'])) {
+        // Obtém os valores dos campos do formulário
+        $id = $_POST['id'];
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['password'];
+
+        // Chama a função para atualizar o usuário no banco de dados
+
+        atualizaUser($id, $nome, $email, $senha);
+
+        // Redireciona o usuário de volta para a página de detalhes do usuário
+
+        header("Location: user.php");
+ 
+    } else {
+        echo "<script> alert(Preencha todos os campos do formulário.) </script>";
+    }
+} else {
+    echo "<script> alert(Método de requisição inválido.) </script>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +65,7 @@
                 
             echo " 
             <div class='page'>
-            <form class='formCad' action='alterDB.php' method='POST'>
+            <form class='formCad' action='alterar.php' method='POST'>
 
             <h1>Alterando Cadastro</h1>
             <p>Digite os seus dados para se cadastrar.</p>

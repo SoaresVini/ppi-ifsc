@@ -2,7 +2,7 @@
 
 function conectaBD()
 {
-  $con = new PDO("mysql:host=localhost;dbname=web", "root", "aluno");
+  $con = new PDO("mysql:host=localhost;dbname=web", "root", "1981");
   return $con;
 
 

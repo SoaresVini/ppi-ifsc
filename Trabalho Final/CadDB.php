@@ -23,6 +23,4 @@ if (conectaBD()) {
   echo "Erro ao conectar";
 }
 
-
-
 ?>
