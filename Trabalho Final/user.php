@@ -59,8 +59,9 @@
 <nav>
    
    <div>
-     <a href="home.php">Home</a>
+   <a href="home.php">Home</a>
      <a href="sobre.php">Sobre</a>
+     <a href="cadastro.html">Cadastrar Usuario</a>
      <a href="Logout.php">Logout</a>
    </div>
 
@@ -98,8 +99,12 @@
 
 <script>
     function deleteUser(id) {
-        alert('Ao deletar você ira ser desconectado do sistema')
-        window.location.href = 'delete.php?id=' + id;
+        if (confirm("Deseja confirmar esta ação?")) {
+            window.location.href = 'delete.php?id=' + id;
+        } else {
+            alert("Ação cancelada.");
+        }
+        
     }
 
     function alterarUser(id) {

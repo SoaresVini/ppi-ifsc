@@ -6,16 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+      #btn{
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 20px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #661279;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      #btn:hover{
+        background-color: #fff;
+        color: #000;
+        transition: 0.5s;
+      }
+
+
+    </style>
 </head>
 
     <body>
-
-      
-
+  
         <div class="page">
-          <button>Voltar</button>
+
+          <input type="submit" value="Voltar" id="btn" onclick="voltar()"/>
           
           <form action="CadDB.php" class="formCad" method="post">
+            
             <h1>Cadastro</h1>
             <p>Digite os seus dados para se CADASTRAR.</p>
             <label for="nome">Nome</label>
@@ -27,7 +52,7 @@
             
             <input type="hidden" name="isBoolean" value="1">
 
-            <input type="submit" value="Acessar" class="btn" />
+            <input type="submit" value="Confirmar" class="btn" />
           </form>
         </div>
     
@@ -44,6 +69,10 @@
               gmail.innerHTML = ''
               senha.innerHTML = ''
 
+            }
+
+            function voltar(){
+              window.location.href = "home.php"
             }
 
 

@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for='password'>Senha</label>
                     <input type='password' placeholder='Digite sua senha' name='password' class='text' value='$senha'><br> 
 
-                    <input type='submit' value='Acessar' class='btn' formtarget='_blank' />
+                    <input type='submit' value='Confirmar' class='btn' formtarget='_blank' />
 
                 </form>
                 </div>";
