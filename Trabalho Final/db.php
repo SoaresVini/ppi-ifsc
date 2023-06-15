@@ -8,32 +8,36 @@ function conectaBD()
 
 }
 
-function atualizaUser($id, $nome, $email)
+function atualizaUser($id, $nome, $email, $telefone, $dataNasc)
 {
   try {
     $con = conectaBD();
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "UPDATE user SET nome=?, login=? WHERE id=?";
+    $sql = "UPDATE user SET nome=?, login=?, telefone=?, dataNasc=? WHERE id=?";
     $stm = $con->prepare($sql);
     $stm->bindParam(1, $nome);
     $stm->bindParam(2, $email);
     $stm->bindParam(3, $id);
+    $stm->bindParam(4, $telefone);
+    $stm->bindParam(5, $dataNasc);
     $stm->execute();
   } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
   }
 }
 
-function insert($nome, $email, $senha)
+function insert($nome, $email, $senha, $telefone, $dataNasc)
 {
   try {
     $con = conectaBD();
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO user (login,nome,senha) VALUES (?,?,?)";
+    $sql = "INSERT INTO user (login,nome,senha,telefone,dataNasc) VALUES (?,?,?,?,?)";
     $stm = $con->prepare($sql);
     $stm->bindParam(1, $email);
     $stm->bindParam(2, $nome);
     $stm->bindParam(3, $senha);
+    $stm->bindParam(4, $telefone);
+    $stm->bindParam(5, $dataNasc);
     $stm->execute();
   } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();

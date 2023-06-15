@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 
     <style>
@@ -31,34 +32,42 @@
 
 
     </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  
 </head>
 
     <body>
-  
-        <div class="page">
 
+        <div class="page">
           <input type="submit" value="Voltar" id="btn" onclick="voltar()"/>
-          
+
           <form action="CadDB.php" class="formCad" method="post">
-            
             <h1>Cadastro</h1>
             <p>Digite os seus dados para se CADASTRAR.</p>
             <label for="nome">Nome</label>
             <input type="text" placeholder="Digite seu Nome" autofocus="true" name="nome" class="text" />
             <label for="email">E-mail</label>
             <input type="email" placeholder="Digite seu e-mail" autofocus="true" name="email" class="text" />
+
             <label for="password">Senha</label>
             <input type="password" placeholder="Digite sua senha" name="password" class="text" />
-            
+
+            <label for="data">Data de Nascimento</label>
+            <input type="date" placeholder="Digite sua senha" name="data" class="text" />
+
+            <label for="telefone">Telefone</label>
+            <input type="text" placeholder="(00) 0000-0000" name="telefone" class="text" />
+            <input type="submit" value="Confirmar" class="btn" />
+
             <input type="hidden" name="isBoolean" value="1">
 
-            <input type="submit" value="Confirmar" class="btn" />
           </form>
         </div>
     
         <script>
-
-            function limpaDados(){
+           function limpaDados(){
 
               let nome = querySelector('#nome')
               let gmail = querySelector('#gmail')
@@ -69,9 +78,13 @@
               gmail.innerHTML = ''
               senha.innerHTML = ''
 
-            }
+          }
+          
+          $(document).ready(function() {
+            $('input[name="telefone"]').mask('(00) 0000-0000');
+          });
 
-            function voltar(){
+          function voltar(){
               window.location.href = "home.php"
             }
 
