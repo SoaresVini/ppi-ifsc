@@ -36,13 +36,45 @@
             border: 2px solid black;
             border-radius: 10px;
             height: 80px;
-            width: 350px;
+            width: 500px;
             display: flex;
             flex-direction: row;
             align-items: center;
             padding: 20px;
         }
 
+        .pesquisa{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 10px;
+            margin-top: 20px;
+        }
+
+        input[type=text]{
+            width: 100%;
+            height: 30px;
+            border-radius: 10px;
+            border: 1px solid black;
+            padding-left: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        input[type=button]{
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+            border: 1px solid black;
+            background-color: rgb(223, 204, 36);
+            cursor: pointer;
+            margin: 10px;
+
+        }
+        
+        input[type=button]:hover{
+            background-color: white;
+        }
 
     </style>
 </head>
@@ -72,25 +104,60 @@
    </div>
  </nav>
 
+ <div id="pesquisa">
+    <input type='text' placeholder='Pesquisar......' autofocus='true' name='pesquisa' class='text' id='pesquisaInput' />
 
-<?php
+    <input type="button" value="Pesquisar" id="text" onclick="pesquisarUsuarios()">
+
+ </div>
+ 
+
+ <?php
     include_once "db.php";
-    $users = recuperaAll();
 
-    // Verifica se existem registros retornados
-    if (!empty($users)) {
-        echo "<ul>";
-        foreach ($users as $user) {
-            echo "<li>
-                    Nome: {$user['nome']} <br> Email: {$user['login']} <br> Tel: {$user['telefone']} <br> Data de Nascimento: {$user['dataNasc']}
-                    <button onclick=\"deleteUser({$user['id']})\">Excluir</button>
-                    <button onclick=\"alterarUser({$user['id']})\">Alterar</button>
-                </li>";
+    if (isset($_SESSION['resultado'])) {
+        $pesquisa = $_SESSION['resultado'];
+    
+        // Verificar se a pesquisa não está vazia
+        if (!empty($pesquisa)) {
+            // A pesquisa retornou resultados
+            foreach ($pesquisa as $row) {
+                echo "<ul>";
+                echo "<li class='usuario'>
+                        Nome: {$row['nome']} <br>
+                        Email: {$row['login']} <br>
+                        Tel: {$row['telefone']} <br>
+                        Data de Nascimento: {$row['dataNasc']}
+                        <button onclick=\"deleteUser({$row['id']})\">Excluir</button>
+                        <button onclick=\"alterarUser({$row['id']})\">Alterar</button>
+                    </li>";
+                echo "</ul>";
+            }
+        } else {
+            echo "<p>Nenhum usuário encontrado.</p>";
         }
-        echo "</ul>";
     } else {
-        echo "<p>Nenhum usuário cadastrado.</p>";
+        $users = recuperaAll();
+    
+        // Verifica se existem registros retornados
+        if (!empty($users)) {
+            echo "<ul>";
+            foreach ($users as $user) {
+                echo "<li class='usuario'>
+                        Nome: {$user['nome']} <br>
+                        Email: {$user['login']} <br>
+                        Tel: {$user['telefone']} <br>
+                        Data de Nascimento: {$user['dataNasc']}
+                        <button onclick=\"deleteUser({$user['id']})\">Excluir</button>
+                        <button onclick=\"alterarUser({$user['id']})\">Alterar</button>
+                    </li>";
+            }
+            echo "</ul>";
+        } else {
+            echo "<p>Nenhum usuário cadastrado.</p>";
+        }
     }
+    
 ?>
 
 <script>
@@ -106,6 +173,12 @@
     function alterarUser(id) {
         window.location.href = 'alterar.php?id=' + id;
     }
+
+    function pesquisarUsuarios() {
+    var pesquisa = document.getElementById('pesquisaInput').value;
+    window.location.href = 'pesquisa.php?pesquisa=' + pesquisa;
+}
+
 </script>
 
 </body>

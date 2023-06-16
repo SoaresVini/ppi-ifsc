@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Redireciona o usuário de volta para a página de detalhes do usuário
 
-        header("Location: user.php");
+        header("Location: home.php");
  
     } else {
         echo "<script> alert(Preencha todos os campos do formulário.) </script>";
@@ -63,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </style>
 </head>
 
+
 <body>
 
     <?php
@@ -89,11 +90,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nome = $user['nome'];
             $email = $user['login'];
             $senha = $user['senha'];
+            $telefone = $user['telefone'];
+            $dataNasc = $user['dataNasc'];
                 
             echo " 
             <div class='page'>
 
-            <input type='submit' value='Voltar' id='btn' onclick='voltar()'/>
+            
 
             <form class='formCad' action='alterar.php' method='POST'>
 
@@ -101,18 +104,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p>Digite os seus dados para se cadastrar.</p>
 
               <label for='nome'>Nome</label>
-              <input type= 'text'placeholder='Digite seu Nome' autofocus='true' name='nome' class='text' />
-              <label for='email'>E-mail</label>
-              <input type='email' placeholder='Digite seu e-mail' autofocus='true' name='email' class='text' />
+              <input type= 'text'placeholder='Digite seu Nome' autofocus='true' name='nome' class='text' value='$nome'/>
+
+              <label for='email'>E-mail </label>
+              <input type='email' placeholder='Digite seu e-mail' autofocus='true' name='email' class='text' value='$email' />
   
               <label for='password'>Senha</label>
-              <input type='password' placeholder='Digite sua senha' name='password' class='text' />
+              <input type='password' placeholder='Digite sua senha' name='password' class='text' value='$senha'/>
   
               <label for='data'>Data de Nascimento</label>
-              <input type='date' placeholder='Digite sua senha' name='data' class='text' />
+              <input type='date' placeholder='Digite sua senha' name='data' class='text' value='$dataNasc'/>
   
               <label for='telefone'>Telefone</label>
-              <input type='text' placeholder='(00) 0000-0000' name='telefone' class='text' />
+              <input type='text' placeholder='(00) 0000-0000' name='telefone' class='text' value='$telefone'/>
   
               <input type='submit' value='Confirmar' class='btn' />
   
@@ -125,11 +129,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           $(document).ready(function() {
             $('input[name='telefone']').mask('(00) 0000-0000');
           });
-
-          function voltar(){
-              window.location.href = 'home.php';
-            }
-
   
           </script>
           

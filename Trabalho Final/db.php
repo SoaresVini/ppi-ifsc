@@ -98,4 +98,14 @@ function insert($nome, $email, $senha, $telefone, $dataNasc)
     }
   }
 
+  function recuperaPorNome($nome) {
+    $con = conectaBD();
+    $sql = "SELECT * FROM user WHERE nome LIKE :nome";
+    $stm = $con->prepare($sql);
+    $stm->bindValue(':nome', "%$nome%");
+    $stm->execute();
+    $return = $stm->fetchAll(PDO::FETCH_ASSOC);
+    return $return;
+}
+
 ?>

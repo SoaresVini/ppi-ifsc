@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
 
         deletaUser($id);
 
-        header("location: user.php");
+        header("location: home.php");
  
     } else {
         echo "<p>Preencha todos os campos do formulário.</p>";
